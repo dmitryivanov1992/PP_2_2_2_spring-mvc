@@ -10,8 +10,13 @@ import web.service.CarService;
 
 @Controller
 public class CarController {
-    @Autowired
     private CarService carServiceImpl;
+
+    @Autowired
+    private CarController(CarService carServiceImpl) {
+        this.carServiceImpl = carServiceImpl;
+    }
+
     @GetMapping(value = "/cars")
     public String carController(@RequestParam(required = false) Integer count, ModelMap model) {
         model.addAttribute(carServiceImpl.getCarsList(count));

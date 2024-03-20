@@ -9,9 +9,10 @@ import java.util.List;
 
 @Repository
 public class CarsDaoImpl implements CarsDao {
+    private List<Car> carList;
     @Override
     public List<Car> getCarsList(Integer count) {
-        List<Car> carList = new ArrayList<>();
+        carList = new ArrayList<>();
         carList.add(new Car("Kia K5", 2021, 35000));
         carList.add(new Car("Mercedes E200", 2019, 40000));
         carList.add(new Car("Audi A4", 2017, 30000));
